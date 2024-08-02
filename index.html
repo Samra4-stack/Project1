@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Exercise 7 Solution</title>
+  </head>
+  <style>
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      margin: 30px;
+      row-gap: 40px;
+    }
+    ul li {
+      list-style-type: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .content {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+      font-size: 20px;
+    }
+    .box {
+      height: 50px;
+      width: 400px;
+      border-radius: 9px;
+      border: 2px solid rgb(30, 176, 205);
+      background-color: rgb(19, 69, 139);
+      color: white;
+      font-size: 1.2em;
+      text-align: center;
+      padding-bottom: 23px;
+      cursor: pointer;
+    }
+    h1 {
+      display: flex;
+      gap: 10px;
+      cursor: pointer;
+    }
+    aside {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .boxes {
+      display: grid;
+      grid-template-columns: 400px 400px 400px;
+      grid-template-rows: 400px 400px 400px;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 20px 30px;
+    }
+    .link {
+      height: 50px;
+      width: 190px;
+      border: 2px solid black;
+      /* text-color: white; */
+      background-color: rgb(84, 150, 84);
+      border-radius: 6px;
+      text-align: center;
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 2px 4px 32px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+    /* a:active{
+      color: brown;
+    } */
+    a:hover {
+      color: blue;
+    }
+    .pic img {
+      height: 200px;
+      width: 200px;
+      border: 2px solid black;
+      border-radius: 50%;
+    }
+    .box1 {
+      height: 350px;
+      width: 350px;
+      background-color: rgb(241, 244, 243);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .box2 {
+      height: 350px;
+      width: 350px;
+      background-color: rgb(241, 244, 243);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .box3 {
+      height: 350px;
+      width: 350px;
+      background-color: rgb(241, 244, 243);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .box4 {
+      height: 350px;
+      width: 350px;
+      background-color: rgb(241, 244, 243);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .box5 {
+      height: 350px;
+      width: 350px;
+      background-color: rgb(241, 244, 243);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .box6 {
+      height: 350px;
+      width: 350px;
+      background-color: rgb(241, 244, 243);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .box7 {
+      height: 350px;
+      width: 350px;
+      background-color: rgb(241, 244, 243);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .box8 {
+      height: 350px;
+      width: 350px;
+      background-color: rgb(241, 244, 243);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .box9 {
+      height: 350px;
+      width: 350px;
+      background-color: rgb(241, 244, 243);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .box10 {
+      height: 350px;
+      width: 350px;
+      background-color: rgb(241, 244, 243);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          height="90px"
+          src="https://www.ultraedit.com/wp-content/uploads/2023/01/UE-Logo-1.webp"
+          alt=""
+        />
+      </div>
+      <div class="right">
+        <ul>
+          <li>
+            <span>Product</span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              color="#000000"
+              fill="none"
+            >
+              <path
+                d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </li>
+          <li>
+            <span>Pricing</span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              color="#000000"
+              fill="none"
+            >
+              <path
+                d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </li>
+          <li>
+            <span>Resources</span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              color="#000000"
+              fill="none"
+            >
+              <path
+                d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </li>
+          <li>
+            <span>About Us</span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              color="#000000"
+              fill="none"
+            >
+              <path
+                d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </li>
+          <li>
+            <img
+              src="https://www.ultraedit.com/wp-content/themes/Divi_Child/img/Lang.png"
+              alt=""
+            />
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="content">
+        <h1>
+          <span>Download UltraEdit for Windows</span
+          ><img
+            width="130px"
+            src="https://www.ultraedit.com/wp-content/uploads/2022/10/Reviews.png"
+            alt=""
+          />
+        </h1>
+        <p>
+          Download and try UltraEdit before you buy it! This download includes
+          the full Windows version of the text editor.
+        </p>
+        <div class="box">
+          <p>Download Mac And Linux Version</p>
+        </div>
+      </div>
+    </main>
+    <aside>
+      <img
+        height="50px"
+        src="https://www.ultraedit.com/wp-content/uploads/2023/01/UE_logo_icon_white.png"
+        alt=""
+      />
+      <h3>Download UltraEdit</h3>
+      <p>v2024.0(released 04/19/2024) | Hotfix</p>
+    </aside>
+    <section>
+      <div class="boxes">
+        <div class="box1">
+          <h2>English</h2>
+          <p>English</p>
+          <div class="link">
+            <a
+              href="https://downloads.ultraedit.com/main/ue/win/ue_french_64.exe?_gl=1*1c6ptg4*_gcl_au*Nzc5NjcwODg1LjE3MTk2NDk4OTI.*_ga*MTI1MTE1NTc4OS4xNzE5NjQ5ODk4*_ga_QNXHVTPWNS*MTcxOTY2MjQ3NS4zLjEuMTcxOTY2MjY5OC45LjAuMA.."
+              >Download 64-bit</a
+            >
+          </div>
+        </div>
+        <div class="box2">
+          <h2>Deutsch</h2>
+          <p>German</p>
+          <div class="link">
+            <a
+              href="https://downloads.ultraedit.com/main/ue/win/ue_french_64.exe?_gl=1*1c6ptg4*_gcl_au*Nzc5NjcwODg1LjE3MTk2NDk4OTI.*_ga*MTI1MTE1NTc4OS4xNzE5NjQ5ODk4*_ga_QNXHVTPWNS*MTcxOTY2MjQ3NS4zLjEuMTcxOTY2MjY5OC45LjAuMA.."
+              >Download 64-bit</a
+            >
+          </div>
+        </div>
+        <div class="box3">
+          <h2>Italiano</h2>
+          <p>Italian</p>
+          <div class="link">
+            <a
+              href="https://downloads.ultraedit.com/main/ue/win/ue_french_64.exe?_gl=1*1c6ptg4*_gcl_au*Nzc5NjcwODg1LjE3MTk2NDk4OTI.*_ga*MTI1MTE1NTc4OS4xNzE5NjQ5ODk4*_ga_QNXHVTPWNS*MTcxOTY2MjQ3NS4zLjEuMTcxOTY2MjY5OC45LjAuMA.."
+              >Download 64-bit</a
+            >
+          </div>
+        </div>
+        <div class="box4">
+          <h2>Español</h2>
+          <p>Spanish</p>
+          <div class="link">
+            <a
+              href="https://downloads.ultraedit.com/main/ue/win/ue_french_64.exe?_gl=1*1c6ptg4*_gcl_au*Nzc5NjcwODg1LjE3MTk2NDk4OTI.*_ga*MTI1MTE1NTc4OS4xNzE5NjQ5ODk4*_ga_QNXHVTPWNS*MTcxOTY2MjQ3NS4zLjEuMTcxOTY2MjY5OC45LjAuMA.."
+              >Download 64-bit</a
+            >
+          </div>
+        </div>
+        <div class="box5">
+          <h2>français</h2>
+          <p>French</p>
+          <div class="link">
+            <a
+              href="https://downloads.ultraedit.com/main/ue/win/ue_french_64.exe?_gl=1*1c6ptg4*_gcl_au*Nzc5NjcwODg1LjE3MTk2NDk4OTI.*_ga*MTI1MTE1NTc4OS4xNzE5NjQ5ODk4*_ga_QNXHVTPWNS*MTcxOTY2MjQ3NS4zLjEuMTcxOTY2MjY5OC45LjAuMA.."
+              >Download 64-bit</a
+            >
+          </div>
+        </div>
+        <div class="box6">
+          <h2>Português brasileiro</h2>
+          <p>Brazilian Portuguese</p>
+          <div class="link">
+            <a
+              href="https://downloads.ultraedit.com/main/ue/win/ue_french_64.exe?_gl=1*1c6ptg4*_gcl_au*Nzc5NjcwODg1LjE3MTk2NDk4OTI.*_ga*MTI1MTE1NTc4OS4xNzE5NjQ5ODk4*_ga_QNXHVTPWNS*MTcxOTY2MjQ3NS4zLjEuMTcxOTY2MjY5OC45LjAuMA.."
+              >Download 64-bit</a
+            >
+          </div>
+        </div>
+        <div class="box7">
+          <h2>日本</h2>
+          <p>Japanese</p>
+          <div class="link">
+            <a
+              href="https://downloads.ultraedit.com/main/ue/win/ue_french_64.exe?_gl=1*1c6ptg4*_gcl_au*Nzc5NjcwODg1LjE3MTk2NDk4OTI.*_ga*MTI1MTE1NTc4OS4xNzE5NjQ5ODk4*_ga_QNXHVTPWNS*MTcxOTY2MjQ3NS4zLjEuMTcxOTY2MjY5OC45LjAuMA.."
+              >Download 64-bit</a
+            >
+          </div>
+        </div>
+        <div class="box8">
+          <h2>한국어</h2>
+          <p>Korean</p>
+          <div class="link">
+            <a
+              href="https://downloads.ultraedit.com/main/ue/win/ue_french_64.exe?_gl=1*1c6ptg4*_gcl_au*Nzc5NjcwODg1LjE3MTk2NDk4OTI.*_ga*MTI1MTE1NTc4OS4xNzE5NjQ5ODk4*_ga_QNXHVTPWNS*MTcxOTY2MjQ3NS4zLjEuMTcxOTY2MjY5OC45LjAuMA.."
+              >Download 64-bit</a
+            >
+          </div>
+        </div>
+        <div class="box9">
+          <h2>中国</h2>
+          <p>Chinese</p>
+          <div class="link">
+            <a
+              href="https://downloads.ultraedit.com/main/ue/win/ue_french_64.exe?_gl=1*1c6ptg4*_gcl_au*Nzc5NjcwODg1LjE3MTk2NDk4OTI.*_ga*MTI1MTE1NTc4OS4xNzE5NjQ5ODk4*_ga_QNXHVTPWNS*MTcxOTY2MjQ3NS4zLjEuMTcxOTY2MjY5OC45LjAuMA.."
+              >Download 64-bit</a
+            >
+          </div>
+        </div>
+        <div class="box10">
+          <h2>中國</h2>
+          <p>Traditional Chinese</p>
+          <div class="link">
+            <a
+              href="https://downloads.ultraedit.com/main/ue/win/ue_french_64.exe?_gl=1*1c6ptg4*_gcl_au*Nzc5NjcwODg1LjE3MTk2NDk4OTI.*_ga*MTI1MTE1NTc4OS4xNzE5NjQ5ODk4*_ga_QNXHVTPWNS*MTcxOTY2MjQ3NS4zLjEuMTcxOTY2MjY5OC45LjAuMA.."
+              >Download 64-bit</a
+            >
+          </div>
+        </div>
+        <div class="pic">
+          <img src="Fatima.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
